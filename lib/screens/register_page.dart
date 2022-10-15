@@ -250,7 +250,7 @@ class RegisterPage extends StatelessWidget {
                     textStyle: const TextStyle(fontSize: 15),
                   ),
                 ),
-                InkWell(
+                GestureDetector(
                   onTap: () {
                     Navigator.pushNamedAndRemoveUntil(
                         context, '/', (route) => false);
