@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scientie/style/style.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,42 +22,99 @@ class LoginPage extends StatelessWidget {
                   bottomRight: Radius.circular(50),
                 ),
               ),
-              height: 360,
-              child: Image.asset('assets/images/login.png'),
+              height: 250,
+              child: Image.asset('assets/images/register.png'),
             ),
-            const SizedBox(height: 32),
-            // Username
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.only(right: 255),
+              child: Text(
+                'Sign up',
+                style: GoogleFonts.arsenal(
+                  textStyle: const TextStyle(
+                      fontSize: 32, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.only(right: 140),
+              child: Text(
+                'Mohon untuk mengisi form dibawah',
+                style: GoogleFonts.arsenal(
+                  textStyle: const TextStyle(
+                      fontSize: 15, color: AppStyle.greyedColor),
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            // Nama Pengguna
             SizedBox(
-              width: MediaQuery.of(context).size.width - 34,
+              width: MediaQuery.of(context).size.width - 32,
               child: TextField(
                 textAlignVertical: TextAlignVertical.center,
                 style: GoogleFonts.arsenal(
                   textStyle: const TextStyle(fontSize: 16, height: 1.5),
                 ),
                 decoration: InputDecoration(
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x80000000),
+                    ),
+                  ),
                   isCollapsed: true,
                   border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(12),
+                      Radius.circular(25),
                     ),
                   ),
-                  fillColor: const Color(0xFFD9D9D9),
-                  filled: true,
-                  contentPadding: const EdgeInsets.all(8),
-                  hintText: 'Username',
+                  contentPadding: const EdgeInsets.all(12),
+                  hintText: 'Nama Pengguna',
                   hintStyle: GoogleFonts.arsenal(
                     textStyle: const TextStyle(
                       fontSize: 16,
-                      color: Color.fromRGBO(131, 128, 128, 100),
+                      color: Color(0xFF838080),
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 14),
-            // Password
+            // Username
+            const SizedBox(height: 10),
             SizedBox(
-              width: MediaQuery.of(context).size.width - 34,
+              width: MediaQuery.of(context).size.width - 32,
+              child: TextField(
+                textAlignVertical: TextAlignVertical.center,
+                style: GoogleFonts.arsenal(
+                  textStyle: const TextStyle(fontSize: 16, height: 1.5),
+                ),
+                decoration: InputDecoration(
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x80000000),
+                    ),
+                  ),
+                  isCollapsed: true,
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(25),
+                    ),
+                  ),
+                  contentPadding: const EdgeInsets.all(12),
+                  hintText: 'Username',
+                  hintStyle: GoogleFonts.arsenal(
+                    textStyle: const TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF838080),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            // Password
+            const SizedBox(height: 10),
+            SizedBox(
+              width: MediaQuery.of(context).size.width - 32,
               child: TextField(
                 obscureText: true,
                 textAlignVertical: TextAlignVertical.center,
@@ -65,29 +122,32 @@ class LoginPage extends StatelessWidget {
                   textStyle: const TextStyle(fontSize: 16, height: 1.5),
                 ),
                 decoration: InputDecoration(
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x80000000),
+                    ),
+                  ),
                   isCollapsed: true,
                   border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(12),
+                      Radius.circular(25),
                     ),
                   ),
-                  fillColor: const Color(0xFFD9D9D9),
-                  filled: true,
-                  contentPadding: const EdgeInsets.all(8),
+                  contentPadding: const EdgeInsets.all(12),
                   hintText: 'Password',
                   hintStyle: GoogleFonts.arsenal(
                     textStyle: const TextStyle(
                       fontSize: 16,
-                      color: Color.fromRGBO(131, 128, 128, 100),
+                      color: Color(0xFF838080),
                     ),
                   ),
                 ),
               ),
             ),
             const SizedBox(
-              height: 23,
+              height: 16,
             ),
-            // Login Button
+            // Sign up Button
             SizedBox(
               width: MediaQuery.of(context).size.width - 55,
               child: ElevatedButton(
@@ -109,10 +169,10 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {},
-                child: const Text('Login'),
+                child: const Text('Sign Up'),
               ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 15),
             // Divider
             Row(
               children: [
@@ -123,7 +183,7 @@ class LoginPage extends StatelessWidget {
                   width: 10,
                 ),
                 Text(
-                  'Atau Login Dengan',
+                  'Atau Sign up Dengan',
                   style: GoogleFonts.arsenal(
                     textStyle: const TextStyle(
                       fontSize: 15,
@@ -151,7 +211,7 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {},
                 icon: Image.asset('assets/icons/Google.png'),
                 label: Text(
-                  'Login dengan Google',
+                  'Sign up dengan Google',
                   style: GoogleFonts.arsenal(
                     textStyle:
                         const TextStyle(fontSize: 16, color: Colors.black),
@@ -172,7 +232,7 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {},
                 icon: Image.asset('assets/icons/Facebook.png'),
                 label: Text(
-                  'Login dengan Facebook',
+                  'Sign up dengan Facebook',
                   style: GoogleFonts.arsenal(
                     textStyle:
                         const TextStyle(fontSize: 16, color: Colors.black),
@@ -185,17 +245,18 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Belum Punya Akun? ',
+                  'Sudah Punya Akun? ',
                   style: GoogleFonts.arsenal(
                     textStyle: const TextStyle(fontSize: 15),
                   ),
                 ),
-                GestureDetector(
+                InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, '/Register');
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/', (route) => false);
                   },
                   child: Text(
-                    ' Buat Akun',
+                    ' Login',
                     style: GoogleFonts.arsenal(
                       textStyle: const TextStyle(
                           fontSize: 15, color: AppStyle.mainColor),
