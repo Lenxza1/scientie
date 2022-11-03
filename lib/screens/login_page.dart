@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
                   bottomRight: Radius.circular(50),
                 ),
               ),
-              height: 360,
+              height: MediaQuery.of(context).size.height * 0.5,
               child: Image.asset('assets/images/login.png'),
             ),
             const SizedBox(height: 32),
