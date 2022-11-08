@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 class MenuHolder extends StatefulWidget {
   final String imgPath;
   final String foodName;
-  // ignore: prefer_typing_uninitialized_variables
   var onTap;
   MenuHolder(
       {super.key, required this.imgPath, required this.foodName, this.onTap});
@@ -19,11 +18,14 @@ class _MenuHolderState extends State<MenuHolder> {
     return InkWell(
       onTap: widget.onTap,
       child: Container(
+        height: 100,
+        width: 150,
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 71, 68, 68),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               widget.imgPath,

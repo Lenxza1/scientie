@@ -27,6 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  badges: ^2.0.3
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
@@ -35,7 +36,11 @@ dependencies:
   font_awesome_flutter: ^10.2.1
   google_fonts: ^3.0.1
   introduction_screen: ^3.0.2
+  path_provider: ^2.0.11
+  provider: ^6.0.4
+  shared_preferences: ^2.0.15
   splashscreen: ^1.3.5
+  sqflite: ^2.2.0+3
   video_player: ^2.4.7
 
 dev_dependencies:

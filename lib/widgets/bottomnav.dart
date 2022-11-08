@@ -27,7 +27,7 @@ class _BottomNavState extends State<BottomNav> {
                   selectedIndex = value;
                 }),
             currentIndex: selectedIndex,
-            type: BottomNavigationBarType.shifting,
+            type: BottomNavigationBarType.fixed,
             selectedIconTheme: const IconThemeData(color: Color(0xFFFF7041)),
             selectedItemColor: const Color(0xFFFF7041),
             unselectedIconTheme: const IconThemeData(color: Color(0xFF838080)),
