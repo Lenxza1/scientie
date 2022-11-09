@@ -11,31 +11,6 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-  List<MenuModel> menuList = [
-    MenuModel(name: 'name', image: '', type: 'Betawi'),
-    MenuModel(name: 'name', image: '', type: 'Betawi'),
-    MenuModel(name: 'name', image: '', type: 'Betawi'),
-    MenuModel(name: 'name', image: '', type: 'Betawi'),
-    MenuModel(name: 'name', image: '', type: 'Betawi'),
-    MenuModel(name: 'name', image: '', type: 'Betawi'),
-    MenuModel(name: 'name', image: '', type: 'Betawi'),
-    MenuModel(name: 'name', image: '', type: 'Betawi'),
-    MenuModel(name: 'name', image: '', type: 'Betawi'),
-    MenuModel(name: 'name', image: '', type: 'Betawi'),
-  ];
-
-  // _changePage() {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(
-  //       builder: (context) => MenuInfo(
-  //           title: menuList[menuIndexGlobal].name,
-  //           imageAssetsPath: 'assets/images/test.jpg',
-  //           foodDesc: 'foodDesc'),
-  //     ),
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,20 +20,22 @@ class _MenuPageState extends State<MenuPage> {
         child: SafeArea(
           child: Center(
             child: GridView.builder(
-              itemCount: menuList.length,
+              itemCount: MenuModel.menuListBetawi.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2),
               itemBuilder: (context, index) => MenuHolder(
                   imgPath: 'assets/images/test.jpg',
-                  foodName: menuList[index].name,
+                  foodName: MenuModel.menuListPopular[index].name,
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MenuInfo(
-                            title: menuList[index].name,
-                            imageAssetsPath: 'assets/images/test.jpg',
-                            foodDesc: 'foodDesc',
-                            context: context),
+                          title: MenuModel.menuListPopular[index].name,
+                          imageAssetsPath: 'assets/images/test.jpg',
+                          foodDesc: 'foodDesc',
+                          context: context,
+                          index: index,
+                        ),
                       ))),
             ),
           ),

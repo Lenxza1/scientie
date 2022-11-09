@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scientie/style/style.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MenuInfo extends StatelessWidget {
   final String title;
   final String imageAssetsPath;
   final String foodDesc;
   final BuildContext context;
+  final int index;
   const MenuInfo(
       {super.key,
       required this.title,
       required this.imageAssetsPath,
       required this.foodDesc,
-      required this.context});
+      required this.context,
+      required this.index});
+
+  void whatsappButton(int index) async {
+    await launchUrl(Uri(
+        scheme: 'https',
+        host: 'wa.me',
+        path: '6287875908732?text=Saya%20Pesan%20$title'));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +80,12 @@ class MenuInfo extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () async {
+          await launchUrl(Uri(
+              scheme: 'https',
+              host: 'wa.me',
+              path: '6287875908732?text=Saya%20Pesan%20$title'));
+        },
         label: Text(
           "Pesan Sekarang",
           style: GoogleFonts.arsenal(

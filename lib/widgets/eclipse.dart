@@ -7,9 +7,15 @@ class Eclipse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: ShapesPainter(),
-      size: Size(MediaQuery.of(context).size.width, diameter),
+    return SizedBox(
+      height: diameter,
+      width: MediaQuery.of(context).size.width,
+      child: CustomPaint(
+        painter: ShapesPainter(),
+        child: Image.asset(
+          'assets/images/Logo.png',
+        ),
+      ),
     );
   }
 }
