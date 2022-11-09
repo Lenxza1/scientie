@@ -6,11 +6,13 @@ class MenuInfo extends StatelessWidget {
   final String title;
   final String imageAssetsPath;
   final String foodDesc;
+  final BuildContext context;
   const MenuInfo(
       {super.key,
       required this.title,
       required this.imageAssetsPath,
-      required this.foodDesc});
+      required this.foodDesc,
+      required this.context});
 
   @override
   Widget build(BuildContext context) {
@@ -63,34 +65,19 @@ class MenuInfo extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.5,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.whatsapp),
-                    label: Text(
-                      "Pesan Sekarang",
-                      style: GoogleFonts.arsenal(
-                        textStyle: const TextStyle(fontSize: 12),
-                      ),
-                    ),
-                  ),
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.add_shopping_cart),
-                    label: Text(
-                      "Tambahkan ke keranjang",
-                      style: GoogleFonts.arsenal(
-                        textStyle: const TextStyle(fontSize: 12),
-                      ),
-                    ),
-                  ),
-                ],
-              )
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        label: Text(
+          "Pesan Sekarang",
+          style: GoogleFonts.arsenal(
+            textStyle: const TextStyle(fontSize: 12),
+          ),
+        ),
+        icon: const Icon(Icons.whatsapp),
       ),
     );
   }

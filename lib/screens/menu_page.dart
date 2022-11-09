@@ -11,8 +11,6 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-  var menuIndexGlobal;
-
   List<MenuModel> menuList = [
     MenuModel(name: 'name', image: '', type: 'Betawi'),
     MenuModel(name: 'name', image: '', type: 'Betawi'),
@@ -26,17 +24,17 @@ class _MenuPageState extends State<MenuPage> {
     MenuModel(name: 'name', image: '', type: 'Betawi'),
   ];
 
-  _changePage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => MenuInfo(
-            title: menuList[menuIndexGlobal].name,
-            imageAssetsPath: 'assets/images/test.jpg',
-            foodDesc: 'foodDesc'),
-      ),
-    );
-  }
+  // _changePage() {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) => MenuInfo(
+  //           title: menuList[menuIndexGlobal].name,
+  //           imageAssetsPath: 'assets/images/test.jpg',
+  //           foodDesc: 'foodDesc'),
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +50,16 @@ class _MenuPageState extends State<MenuPage> {
                   crossAxisCount: 2),
               itemBuilder: (context, index) => MenuHolder(
                   imgPath: 'assets/images/test.jpg',
-                  foodName: menuList[index].name),
+                  foodName: menuList[index].name,
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MenuInfo(
+                            title: menuList[index].name,
+                            imageAssetsPath: 'assets/images/test.jpg',
+                            foodDesc: 'foodDesc',
+                            context: context),
+                      ))),
             ),
           ),
         ),

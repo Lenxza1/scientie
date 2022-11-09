@@ -119,12 +119,24 @@ class _HomePageState extends State<HomePage> {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const MenuInfo(
-                                    title: 'test ',
-                                    imageAssetsPath: 'assets/images/test.jpg',
-                                    foodDesc: 'test')))),
+                                builder: (context) => MenuInfo(
+                                      title: 'test ',
+                                      imageAssetsPath: 'assets/images/test.jpg',
+                                      foodDesc: 'test',
+                                      context: context,
+                                    )))),
                     MenuHolder(
-                        imgPath: 'assets/images/test.jpg', foodName: 'test'),
+                        imgPath: 'assets/images/test.jpg',
+                        foodName: 'test',
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MenuInfo(
+                                      title: 'test ',
+                                      imageAssetsPath: 'assets/images/test.jpg',
+                                      foodDesc: 'test',
+                                      context: context,
+                                    )))),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -132,9 +144,29 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     MenuHolder(
-                        imgPath: 'assets/images/test.jpg', foodName: 'test'),
+                        imgPath: 'assets/images/test.jpg',
+                        foodName: 'test',
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MenuInfo(
+                                      title: 'test ',
+                                      imageAssetsPath: 'assets/images/test.jpg',
+                                      foodDesc: 'test',
+                                      context: context,
+                                    )))),
                     MenuHolder(
-                        imgPath: 'assets/images/test.jpg', foodName: 'test'),
+                        imgPath: 'assets/images/test.jpg',
+                        foodName: 'test',
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MenuInfo(
+                                      title: 'test ',
+                                      imageAssetsPath: 'assets/images/test.jpg',
+                                      foodDesc: 'test',
+                                      context: context,
+                                    )))),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -142,9 +174,29 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     MenuHolder(
-                        imgPath: 'assets/images/test.jpg', foodName: 'test'),
+                        imgPath: 'assets/images/test.jpg',
+                        foodName: 'test',
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MenuInfo(
+                                      title: 'test ',
+                                      imageAssetsPath: 'assets/images/test.jpg',
+                                      foodDesc: 'test',
+                                      context: context,
+                                    )))),
                     MenuHolder(
-                        imgPath: 'assets/images/test.jpg', foodName: 'test'),
+                        imgPath: 'assets/images/test.jpg',
+                        foodName: 'test',
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MenuInfo(
+                                      title: 'test ',
+                                      imageAssetsPath: 'assets/images/test.jpg',
+                                      foodDesc: 'test',
+                                      context: context,
+                                    )))),
                   ],
                 ),
               ],

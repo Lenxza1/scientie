@@ -67,15 +67,17 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const FlutterLogo(
-                    size: 70,
+                  Image.asset(
+                    'assets/images/Logo_PP_jpg.png',
+                    width: 70,
+                    height: 70,
                   ),
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         border: Border.all(width: 4, color: Colors.white)),
-                    child: Text('\$cientie',
+                    child: Text('Scientie',
                         style: GoogleFonts.arsenal(
                           textStyle: const TextStyle(
                               fontSize: 40,

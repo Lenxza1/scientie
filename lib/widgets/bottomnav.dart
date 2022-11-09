@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scientie/screens/home_page.dart';
 import 'package:scientie/screens/kelompok_menu.dart';
-import 'package:scientie/screens/menu_page.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
@@ -14,7 +13,6 @@ class _BottomNavState extends State<BottomNav> {
   int selectedIndex = 0;
   final pages = [
     const HomePage(),
-    const MenuPage(),
     const MenuKelompokPage(),
   ];
 
@@ -38,8 +36,6 @@ class _BottomNavState extends State<BottomNav> {
             showUnselectedLabels: false,
             items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.restaurant_menu), label: "Menu"),
               BottomNavigationBarItem(
                   icon: Icon(Icons.group), label: "Kelompok"),
             ]));
