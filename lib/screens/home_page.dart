@@ -123,36 +123,32 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      itemCount: 6,
+                      itemCount: 2,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                              childAspectRatio: 2,
+                              childAspectRatio: 3 / 2,
                               mainAxisSpacing: 12,
                               crossAxisSpacing: 12,
                               crossAxisCount: 2),
-                      itemBuilder: (context, index) {
-                        return Container(
-                          child: MenuHolder(
-                              imgPath: MenuModel.menuListPopular[index].image,
-                              foodName: MenuModel.menuListPopular[index].name,
-                              onTap: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => MenuInfo(
-                                            title: MenuModel
-                                                .menuListPopular[index].name,
-                                            imageAssetsPath: MenuModel
-                                                .menuListPopular[index].image,
-                                            foodDesc: MenuModel
-                                                .menuListPopular[index].desc,
-                                            context: context,
-                                            index: index,
-                                          )))),
-                        );
-                      },
+                      itemBuilder: (context, index) => MenuHolder(
+                          imgPath: MenuModel.menuListPopular[index].image,
+                          foodName: MenuModel.menuListPopular[index].name,
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MenuInfo(
+                                        title: MenuModel
+                                            .menuListPopular[index].name,
+                                        imageAssetsPath: MenuModel
+                                            .menuListPopular[index].image,
+                                        foodDesc: MenuModel
+                                            .menuListPopular[index].desc,
+                                        context: context,
+                                        index: index,
+                                      )))),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

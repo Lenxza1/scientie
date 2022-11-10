@@ -46,3 +46,38 @@ class _MenuHolderState extends State<MenuHolder> {
     );
   }
 }
+
+class KategoriMenuHolder extends StatelessWidget {
+  const KategoriMenuHolder({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: null,
+      child: Container(
+        height: 350,
+        width: MediaQuery.of(context).size.width * 0.8,
+        color: const Color.fromARGB(255, 29, 28, 28),
+        child: Row(
+          children: [
+            Container(
+              width: 100,
+              height: 250,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  scale: 2 / 3,
+                  image: AssetImage('assets/images/test.jpg'),
+                ),
+              ),
+            ),
+            Column(
+              children: [
+                Text('Test'),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
