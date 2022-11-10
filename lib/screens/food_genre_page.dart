@@ -29,7 +29,7 @@ class _MenuBetawiState extends State<MenuBetawi> {
         child: SafeArea(
             child: Center(
           child: SizedBox(
-            width: 150,
+            width: MediaQuery.of(context).size.width * 0.8,
             child: ListView.separated(
                 padding: const EdgeInsets.symmetric(vertical: 12),
                 separatorBuilder: (context, index) => const SizedBox(
@@ -37,9 +37,11 @@ class _MenuBetawiState extends State<MenuBetawi> {
                     ),
                 addRepaintBoundaries: false,
                 itemCount: MenuModel.menuListBetawi.length,
-                itemBuilder: (context, index) => MenuHolder(
+                itemBuilder: (context, index) => KategoriMenuHolder(
                       imgPath: MenuModel.menuListBetawi[index].image,
                       foodName: MenuModel.menuListBetawi[index].name,
+                      foodPrice: MenuModel.menuListBetawi[index].foodPrice,
+                      desc: MenuModel.menuListBetawi[index].desc,
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -85,16 +87,18 @@ class _MenuPopularState extends State<MenuPopular> {
         child: SafeArea(
             child: Center(
           child: SizedBox(
-            width: 150,
+            width: MediaQuery.of(context).size.width * 0.8,
             child: ListView.separated(
                 padding: const EdgeInsets.symmetric(vertical: 12),
                 separatorBuilder: (context, index) => const SizedBox(
                       height: 16,
                     ),
                 itemCount: MenuModel.menuListPopular.length,
-                itemBuilder: (context, index) => MenuHolder(
+                itemBuilder: (context, index) => KategoriMenuHolder(
                       imgPath: MenuModel.menuListPopular[index].image,
                       foodName: MenuModel.menuListPopular[index].name,
+                      foodPrice: MenuModel.menuListPopular[index].foodPrice,
+                      desc: MenuModel.menuListPopular[index].desc,
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(

@@ -47,32 +47,81 @@ class _MenuHolderState extends State<MenuHolder> {
   }
 }
 
-class KategoriMenuHolder extends StatelessWidget {
-  const KategoriMenuHolder({super.key});
+class KategoriMenuHolder extends StatefulWidget {
+  final String imgPath;
+  final String foodName;
+  final String foodPrice;
+  final String desc;
+  var onTap;
+  KategoriMenuHolder(
+      {super.key,
+      required this.imgPath,
+      required this.foodName,
+      required this.foodPrice,
+      required this.desc,
+      this.onTap});
 
+  @override
+  State<KategoriMenuHolder> createState() => _KategoriMenuHolderState();
+}
+
+class _KategoriMenuHolderState extends State<KategoriMenuHolder> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: null,
+      onTap: widget.onTap,
       child: Container(
-        height: 350,
-        width: MediaQuery.of(context).size.width * 0.8,
+        height: 100,
+        width: double.infinity,
         color: const Color.fromARGB(255, 29, 28, 28),
         child: Row(
           children: [
             Container(
               width: 100,
               height: 250,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 image: DecorationImage(
-                  scale: 2 / 3,
-                  image: AssetImage('assets/images/test.jpg'),
+                  scale: 3 / 4,
+                  image: AssetImage(widget.imgPath),
                 ),
               ),
             ),
             Column(
               children: [
-                Text('Test'),
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: Text(
+                    widget.foodName,
+                    style: GoogleFonts.arsenal(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: Text(
+                    widget.foodPrice,
+                    style: GoogleFonts.arsenal(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: Text(
+                    widget.desc,
+                    overflow: TextOverflow.clip,
+                    style: GoogleFonts.arsenal(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal)),
+                  ),
+                )
               ],
             )
           ],

@@ -123,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      itemCount: 2,
+                      itemCount: 6,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                               childAspectRatio: 3 / 2,

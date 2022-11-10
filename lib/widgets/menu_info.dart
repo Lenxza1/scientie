@@ -9,15 +9,17 @@ class MenuInfo extends StatelessWidget {
   final String foodDesc;
   final BuildContext context;
   final int index;
+  final String foodPrice;
   const MenuInfo(
       {super.key,
       required this.title,
       required this.imageAssetsPath,
       required this.foodDesc,
       required this.context,
-      required this.index});
+      required this.index,
+      this.foodPrice = 'Rp 2.000,00'});
 
-  void whatsappButton(int index) async {
+  whatsappButton() async {
     await launchUrl(Uri(
         scheme: 'https',
         host: 'wa.me',
@@ -81,10 +83,17 @@ class MenuInfo extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
-          await launchUrl(Uri(
-              scheme: 'https',
-              host: 'wa.me',
-              path: '6287875908732?text=Saya%20Pesan%20$title'));
+          var whatsapplink = Uri.parse(
+              'whatsapp://send?phone=6287875908732&text=Saya%20Pesan%20$title');
+          if (await canLaunchUrl(whatsapplink)) {
+            await launchUrl(whatsapplink);
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text("WhatsApp belum di install di device ini"),
+              ),
+            );
+          }
         },
         label: Text(
           "Pesan Sekarang",
