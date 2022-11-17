@@ -1,5 +1,8 @@
+// ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scientie/style/style.dart';
 
 class MenuHolder extends StatefulWidget {
   final String imgPath;
@@ -21,7 +24,7 @@ class _MenuHolderState extends State<MenuHolder> {
         height: 100,
         width: 150,
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 71, 68, 68),
+          color: const Color.fromARGB(255, 29, 28, 28),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
@@ -30,6 +33,9 @@ class _MenuHolderState extends State<MenuHolder> {
             Image.asset(
               widget.imgPath,
               height: 75,
+            ),
+            const SizedBox(
+              height: 8,
             ),
             Text(
               widget.foodName,
@@ -75,6 +81,8 @@ class _KategoriMenuHolderState extends State<KategoriMenuHolder> {
         width: double.infinity,
         color: const Color.fromARGB(255, 29, 28, 28),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Container(
               width: 100,
@@ -86,44 +94,203 @@ class _KategoriMenuHolderState extends State<KategoriMenuHolder> {
                 ),
               ),
             ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 12.0),
-                  child: Text(
-                    widget.foodName,
-                    style: GoogleFonts.arsenal(
-                        textStyle: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold)),
-                  ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: SizedBox(
+                width: 200,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.foodName,
+                      style: GoogleFonts.arsenal(
+                          textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold)),
+                    ),
+                    Text(
+                      widget.foodPrice,
+                      style: GoogleFonts.arsenal(
+                          textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal)),
+                    ),
+                    Text(
+                      widget.desc,
+                      maxLines: 3,
+                      overflow: TextOverflow.clip,
+                      style: GoogleFonts.arsenal(
+                          textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal)),
+                    )
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12.0),
-                  child: Text(
-                    widget.foodPrice,
-                    style: GoogleFonts.arsenal(
-                        textStyle: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.normal)),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12.0),
-                  child: Text(
-                    widget.desc,
-                    overflow: TextOverflow.clip,
-                    style: GoogleFonts.arsenal(
-                        textStyle: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.normal)),
-                  ),
-                )
-              ],
+              ),
             )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DaftarMenuHolder extends StatefulWidget {
+  final String kel;
+  final String foodName1;
+  final String imgPath1;
+  final String foodName2;
+  final String imgPath2;
+  var onTap;
+  DaftarMenuHolder(
+      {super.key,
+      required this.kel,
+      required this.foodName1,
+      required this.imgPath1,
+      required this.foodName2,
+      required this.imgPath2,
+      this.onTap});
+
+  @override
+  State<DaftarMenuHolder> createState() => _DaftarMenuHolderState();
+}
+
+class _DaftarMenuHolderState extends State<DaftarMenuHolder> {
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: widget.onTap,
+      child: SizedBox(
+        height: 100,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              widget.kel,
+              style: GoogleFonts.arsenal(
+                  textStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              )),
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              height: 150,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        width: 150,
+                        decoration: const BoxDecoration(
+                            color: AppStyle.greyedColor,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(12),
+                                topRight: Radius.circular(12))),
+                        child: Center(
+                          child: Text(
+                            "Makanan Betawi",
+                            style: GoogleFonts.arsenal(
+                                textStyle: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white)),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 100,
+                        width: 150,
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 29, 28, 28),
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20)),
+                        ),
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 75,
+                              height: 75,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  scale: 3 / 4,
+                                  image: AssetImage(widget.imgPath1),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 1),
+                            Text(widget.foodName1,
+                                style: GoogleFonts.arsenal(
+                                    textStyle: const TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white))),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        width: 150,
+                        decoration: const BoxDecoration(
+                            color: AppStyle.greyedColor,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(12),
+                                topRight: Radius.circular(12))),
+                        child: Center(
+                          child: Text(
+                            "Makanan Popular",
+                            style: GoogleFonts.arsenal(
+                                textStyle: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white)),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 100,
+                        width: 150,
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 29, 28, 28),
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20)),
+                        ),
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 75,
+                              height: 75,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  scale: 3 / 4,
+                                  image: AssetImage(widget.imgPath2),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 1),
+                            Text(widget.foodName2,
+                                style: GoogleFonts.arsenal(
+                                    textStyle: const TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white))),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

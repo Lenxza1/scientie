@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scientie/model/list_menu.dart';
+import 'package:scientie/style/style.dart';
 import 'package:scientie/widgets/menu_holder.dart';
 import 'package:scientie/widgets/menu_info.dart';
 
@@ -16,6 +17,7 @@ class _MenuBetawiState extends State<MenuBetawi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppStyle.mainColor,
         centerTitle: true,
         title: Text(
           "Menu Betawi",
@@ -74,6 +76,7 @@ class _MenuPopularState extends State<MenuPopular> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppStyle.mainColor,
         centerTitle: true,
         title: Text(
           "Menu Popular",

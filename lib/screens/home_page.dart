@@ -40,6 +40,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(
+                      style: const ButtonStyle(),
                       onPressed: () {
                         Navigator.pushNamed(context, '/PopularFood');
                       },
@@ -76,23 +77,10 @@ class _HomePageState extends State<HomePage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 10.0),
                       child: Text(
-                        "Menu Utama",
+                        "Menu Makanan",
                         style: GoogleFonts.arsenal(
                           textStyle: const TextStyle(
                               fontSize: 24, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10.0),
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Text(
-                          "Selengkapnya",
-                          style: GoogleFonts.arsenal(
-                            textStyle: const TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600),
-                          ),
                         ),
                       ),
                     ),

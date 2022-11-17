@@ -47,11 +47,14 @@ class MenuInfo extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(imageAssetsPath),
+              Padding(
+                padding: const EdgeInsets.only(top: 12.0),
+                child: Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(imageAssetsPath),
+                    ),
                   ),
                 ),
               ),
@@ -67,15 +70,12 @@ class MenuInfo extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               Padding(
-                padding: const EdgeInsets.only(left: 10.0),
+                padding: const EdgeInsets.only(left: 10.0, right: 10),
                 child: Text(
                   foodDesc,
                   style: GoogleFonts.arsenal(
                       textStyle: const TextStyle(fontSize: 14)),
                 ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.5,
               ),
             ],
           ),
