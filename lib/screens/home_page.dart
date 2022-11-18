@@ -103,37 +103,31 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 const SizedBox(height: 8),
-                Center(
-                  child: Flexible(
-                    flex: 2,
-                    fit: FlexFit.tight,
-                    child: GridView.builder(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: 6,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              childAspectRatio: 3 / 2,
-                              mainAxisSpacing: 12,
-                              crossAxisSpacing: 12,
-                              crossAxisCount: 2),
-                      itemBuilder: (context, index) => MenuHolder(
-                          imgPath: MenuModel.menuListPopular[index].image,
-                          foodName: MenuModel.menuListPopular[index].name,
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MenuInfo(
-                                        title: MenuModel
-                                            .menuListPopular[index].name,
-                                        imageAssetsPath: MenuModel
-                                            .menuListPopular[index].image,
-                                        foodDesc: MenuModel
-                                            .menuListPopular[index].desc,
-                                        context: context,
-                                        index: index,
-                                      )))),
+                GridView.builder(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: 6,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: 3 / 2,
+                      mainAxisSpacing: 12,
+                      crossAxisSpacing: 12,
+                      crossAxisCount: 2),
+                  itemBuilder: (context, index) => MenuHolder(
+                    imgPath: MenuModel.menuListPopular[index].image,
+                    foodName: MenuModel.menuListPopular[index].name,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MenuInfo(
+                          title: MenuModel.menuListPopular[index].name,
+                          imageAssetsPath:
+                              MenuModel.menuListPopular[index].image,
+                          foodDesc: MenuModel.menuListPopular[index].desc,
+                          context: context,
+                          index: index,
+                        ),
+                      ),
                     ),
                   ),
                 ),

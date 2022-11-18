@@ -3,137 +3,180 @@ class MenuModel {
   String image;
   String desc;
   String foodPrice;
+  String jenis;
 
-  MenuModel(
-      {required this.name,
-      required this.image,
-      required this.desc,
-      required this.foodPrice});
+  MenuModel({
+    required this.name,
+    required this.image,
+    required this.desc,
+    required this.foodPrice,
+    required this.jenis,
+  });
 
   static final List<MenuModel> menuListBetawi = [
     MenuModel(
-        name: 'Laksa Betawi',
-        image: 'assets/images/Laksa Betawi.jpg',
-        desc:
-            'Laksa Betawi merupakan makanan berkuah santan dengan bumbukuning dan berbagai bahan isian. Untuk isian laksa Betawi antara lainketupat atau lontong, tahu, bihun, suwiran daging ayam, tauge, telurrebus, dan berbagai bahan pelengkap.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Laksa Betawi',
+      image: 'assets/images/Laksa Betawi.jpg',
+      desc:
+          'Laksa Betawi merupakan makanan berkuah santan dengan bumbukuning dan berbagai bahan isian. Untuk isian laksa Betawi antara lainketupat atau lontong, tahu, bihun, suwiran daging ayam, tauge, telurrebus, dan berbagai bahan pelengkap.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Betawi",
+    ),
     MenuModel(
-        name: 'Nasi Uduk',
-        image: 'assets/images/Nasi Uduk.jpg',
-        desc:
-            'Nasi uduk merupakan salah satu masakan khas Nusantara yang dimasakdengan santan dan bumbu tertentu. Aroma nasinya yang wangi danpulen, membuat siapa saja yang memakan nasi uduk pasti ketagihan.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Nasi Uduk',
+      image: 'assets/images/Nasi Uduk.jpg',
+      desc:
+          'Nasi uduk merupakan salah satu masakan khas Nusantara yang dimasakdengan santan dan bumbu tertentu. Aroma nasinya yang wangi danpulen, membuat siapa saja yang memakan nasi uduk pasti ketagihan.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Betawi",
+    ),
     MenuModel(
-        name: 'Gado - Gado',
-        image: 'assets/images/Gado Gado.jpg',
-        desc:
-            'Gado gado merupakan makanan sehat yang terdiri dari macam-macamsayur rebus dan bahan pelengkap yang dicampur dengan bumbu kacang.Selain rasanya yang enak, resep dan cara membuat gado-gado tidaklahsulit karena bahannya sangat mudah didapat dan murah meriah.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Gado - Gado',
+      image: 'assets/images/Gado Gado.jpg',
+      desc:
+          'Gado gado merupakan makanan sehat yang terdiri dari macam-macamsayur rebus dan bahan pelengkap yang dicampur dengan bumbu kacang.Selain rasanya yang enak, resep dan cara membuat gado-gado tidaklahsulit karena bahannya sangat mudah didapat dan murah meriah.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Betawi",
+    ),
     MenuModel(
-        name: 'Nasi Kuning',
-        image: 'assets/images/Nasi Kuning.jpg',
-        desc:
-            'Nasi kuning merupakan makanan khas Indonesia yang umumnya disajikansaat perayaan tertentu seperti syukuran, hajatan, atau lainnya. Rasanyayang gurih, enak, dan kaya akan rempah-rempah membuat banyak oranggemar memakan nasi kuning.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Nasi Kuning',
+      image: 'assets/images/Nasi Kuning.jpg',
+      desc:
+          'Nasi kuning merupakan makanan khas Indonesia yang umumnya disajikansaat perayaan tertentu seperti syukuran, hajatan, atau lainnya. Rasanyayang gurih, enak, dan kaya akan rempah-rempah membuat banyak oranggemar memakan nasi kuning.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Betawi",
+    ),
     MenuModel(
-        name: 'Soto Betawi',
-        image: 'assets/images/Soto Betawi.jpg',
-        desc:
-            'Soto Betawi merupakan salah satu jenis soto khas Nusantara yang palingdigemari. Berkuah putih dan cukup kental, soto Betawi ada yang terbuatdari santan kelapa atau susu. Tak ayal, menu ini identik dengan rasa gurih.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Soto Betawi',
+      image: 'assets/images/Soto Betawi.jpg',
+      desc:
+          'Soto Betawi merupakan salah satu jenis soto khas Nusantara yang palingdigemari. Berkuah putih dan cukup kental, soto Betawi ada yang terbuatdari santan kelapa atau susu. Tak ayal, menu ini identik dengan rasa gurih.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Betawi",
+    ),
     MenuModel(
-        name: 'Ketoprak',
-        image: 'assets/images/Ketoprak.jpeg',
-        desc:
-            'Ketoprak merupakan salah satu makanan tradisional khas Jakartayang sampai sekarang masih mudah kita jumpai. Makanan yang satu initerdiri dari irisan ketupat, tahu, bihun, tauge yang disiram dengan bumbusaus kacang dan disajikan dengan kerupuk, bawang goreng',
-        foodPrice: 'Rp 10.000'),
+      name: 'Ketoprak',
+      image: 'assets/images/Ketoprak.jpeg',
+      desc:
+          'Ketoprak merupakan salah satu makanan tradisional khas Jakartayang sampai sekarang masih mudah kita jumpai. Makanan yang satu initerdiri dari irisan ketupat, tahu, bihun, tauge yang disiram dengan bumbusaus kacang dan disajikan dengan kerupuk, bawang goreng',
+      foodPrice: 'Rp 10.000',
+      jenis: "Betawi",
+    ),
     MenuModel(
-        name: 'Nasi Kebuli',
-        image: 'assets/images/Nasi Kebuli.jpeg',
-        desc:
-            'Nasi kebuli adalah hidangan nasi berbumbu yang bercitarasa gurih yangditemukan di Indonesia. Nasi ini dimasak bersama kaldu daging kambing,susu kambing, dan minyak samin, disajikan dengan daging kambing gorengdan kadang ditaburi dengan irisan kurma atau kismis.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Nasi Kebuli',
+      image: 'assets/images/Nasi Kebuli.jpeg',
+      desc:
+          'Nasi kebuli adalah hidangan nasi berbumbu yang bercitarasa gurih yangditemukan di Indonesia. Nasi ini dimasak bersama kaldu daging kambing,susu kambing, dan minyak samin, disajikan dengan daging kambing gorengdan kadang ditaburi dengan irisan kurma atau kismis.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Betawi",
+    ),
     MenuModel(
-        name: 'Nasi Ulam',
-        image: 'assets/images/Nasi Ulam.jpg',
-        desc:
-            'Nasi ulam adalah hidangan nasi yang dicampur berbagai bumbu dan rempah,khususnya daun pegagan atau kadang diganti daun kemangi, sayuran,dan berbagai bumbu, serta ditemani beberapa macam lauk-pauk.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Nasi Ulam',
+      image: 'assets/images/Nasi Ulam.jpg',
+      desc:
+          'Nasi ulam adalah hidangan nasi yang dicampur berbagai bumbu dan rempah,khususnya daun pegagan atau kadang diganti daun kemangi, sayuran,dan berbagai bumbu, serta ditemani beberapa macam lauk-pauk.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Betawi",
+    ),
     MenuModel(
-        name: 'Lontong Sayur',
-        image: 'assets/images/Lontong Sayur.jpg',
-        desc:
-            'Lontong sayur merupakan lontong yang disiram dengan kuah santan kuning denganberbagai bahan isian dan pelengkap. Rasanya yang enak dan gurihmembuat lontong sayur cocok dijadikan sarapan. ',
-        foodPrice: 'Rp 10.000'),
+      name: 'Lontong Sayur',
+      image: 'assets/images/Lontong Sayur.jpg',
+      desc:
+          'Lontong sayur merupakan lontong yang disiram dengan kuah santan kuning denganberbagai bahan isian dan pelengkap. Rasanya yang enak dan gurihmembuat lontong sayur cocok dijadikan sarapan. ',
+      foodPrice: 'Rp 10.000',
+      jenis: "Betawi",
+    ),
     MenuModel(
-        name: 'Pecel Ayam',
-        image: 'assets/images/Pecel.jpg',
-        desc:
-            'Pecel ayam merupakan salah satu makanan lezat yang mudah kita temui dipenjualpinggiran jalan ataupun dibanyak tempat makan. Walaupun namanya pecelayam, pecel ayam sendiri sebenarnya adalah ayam goreng yang disajikan lengkap dengan sambal dan lalapan.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Pecel Ayam',
+      image: 'assets/images/Pecel.jpg',
+      desc:
+          'Pecel ayam merupakan salah satu makanan lezat yang mudah kita temui dipenjualpinggiran jalan ataupun dibanyak tempat makan. Walaupun namanya pecelayam, pecel ayam sendiri sebenarnya adalah ayam goreng yang disajikan lengkap dengan sambal dan lalapan.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Betawi",
+    ),
   ];
 
   static final List<MenuModel> menuListPopular = [
     MenuModel(
-        name: 'Oreo Cheesecake',
-        image: 'assets/images/Oreo Cheesecake.jpg',
-        desc:
-            'Cheese cake oreo adalah salah satu jenis dessert yang cukup banyak digemari.Rasanya yang lezat dan cara membuatnya yang mudah membuatnya menjadi makananpenutup yang sering dipilih untuk disajikan dan disantap. Anak-anak kecil terutama,sangat menyukai dessert yang satu ini.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Oreo Cheesecake',
+      image: 'assets/images/Oreo Cheesecake.jpg',
+      desc:
+          'Cheese cake oreo adalah salah satu jenis dessert yang cukup banyak digemari.Rasanya yang lezat dan cara membuatnya yang mudah membuatnya menjadi makananpenutup yang sering dipilih untuk disajikan dan disantap. Anak-anak kecil terutama,sangat menyukai dessert yang satu ini.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Popular",
+    ),
     MenuModel(
-        name: 'Nasi Liwet',
-        image: 'assets/images/Nasi Liwet.jpg',
-        desc:
-            'Nasi liwet adalah hidangan nasi khas Indonesia yang dimasak dengan santan,kaldu ayam, dan rempah-rempah Nasi kukus biasanya dimasak dalam air, tetapi nasiliwet adalah nasi yang dimasak dengan santan, kaldu ayam, daun salam dan serai,sehingga memberikan nasi rasa yang kaya, aromatik, dan gurih.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Nasi Liwet',
+      image: 'assets/images/Nasi Liwet.jpg',
+      desc:
+          'Nasi liwet adalah hidangan nasi khas Indonesia yang dimasak dengan santan,kaldu ayam, dan rempah-rempah Nasi kukus biasanya dimasak dalam air, tetapi nasiliwet adalah nasi yang dimasak dengan santan, kaldu ayam, daun salam dan serai,sehingga memberikan nasi rasa yang kaya, aromatik, dan gurih.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Popular",
+    ),
     MenuModel(
-        name: 'Nasi Nugget Geprek',
-        image: 'assets/images/Nasi Nugget Geprek.jpeg',
-        desc:
-            'Nugget merupakan salah satu jenis frozen food yang jadi andalan banyak orang.Makanan yang juga tergolong cepat saji ini digemari karena cara memasaknya yangsangat mudah. Cukup digoreng dan ditambah saus sambal saja, nugget sudah terasanikmat, apalagi ditemani dengan sepiring nasi hangat.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Nasi Nugget Geprek',
+      image: 'assets/images/Nasi Nugget Geprek.jpeg',
+      desc:
+          'Nugget merupakan salah satu jenis frozen food yang jadi andalan banyak orang.Makanan yang juga tergolong cepat saji ini digemari karena cara memasaknya yangsangat mudah. Cukup digoreng dan ditambah saus sambal saja, nugget sudah terasanikmat, apalagi ditemani dengan sepiring nasi hangat.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Popular",
+    ),
     MenuModel(
-        name: 'Kwetiau Goreng',
-        image: 'assets/images/Kwetiau Goreng.jpg',
-        desc:
-            'Kwetiau goreng merupakan makanan adaptasi dari China yang sekarang sudah sangatpopuler di Indonesia. Cara memasaknya hampir sama seperti memasak mie goreng,hanya saja jenis mie yang digunakan berbeda. Mie kwetiau berbentuk tipis sepertipita dan kenyal.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Kwetiau Goreng',
+      image: 'assets/images/Kwetiau Goreng.jpg',
+      desc:
+          'Kwetiau goreng merupakan makanan adaptasi dari China yang sekarang sudah sangatpopuler di Indonesia. Cara memasaknya hampir sama seperti memasak mie goreng,hanya saja jenis mie yang digunakan berbeda. Mie kwetiau berbentuk tipis sepertipita dan kenyal.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Popular",
+    ),
     MenuModel(
-        name: 'Nasi Goreng Hongkong',
-        image: 'assets/images/Nasi Goreng Hongkong.jpeg',
-        desc:
-            'Nasi goreng Hong Kong ini banyak ditawarkan di restoran. Bahkan kini banyak dijualsebagai makanan halal. Paduan bahan yang biasa dipakai adalah daging sapi irisatau cincang. Tetapi yang populer justru dengan paduan udang. Ikuti resep nasigoreng Hong Kong ini untuk membuatnya.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Nasi Goreng Hongkong',
+      image: 'assets/images/Nasi Goreng Hongkong.jpeg',
+      desc:
+          'Nasi goreng Hong Kong ini banyak ditawarkan di restoran. Bahkan kini banyak dijualsebagai makanan halal. Paduan bahan yang biasa dipakai adalah daging sapi irisatau cincang. Tetapi yang populer justru dengan paduan udang. Ikuti resep nasigoreng Hong Kong ini untuk membuatnya.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Popular",
+    ),
     MenuModel(
-        name: 'Massimo Spaghetti',
-        image: 'assets/images/Massimo Spaghetti.jpg',
-        desc:
-            'Rasanya creamy karena penggunaan campuran telur dan permesan cheese untuk sausnya,ditambah lagi topping bacon yang banyak, semakin menyempurnakan rasa dan penampilannya.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Massimo Spaghetti',
+      image: 'assets/images/Massimo Spaghetti.jpg',
+      desc:
+          'Rasanya creamy karena penggunaan campuran telur dan permesan cheese untuk sausnya,ditambah lagi topping bacon yang banyak, semakin menyempurnakan rasa dan penampilannya.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Popular",
+    ),
     MenuModel(
-        name: 'Bento Katsu',
-        image: 'assets/images/Bento Katsu.jpg',
-        desc:
-            'Paket Bento Lengkap berisi Chicken Katsu yang gurih dilengkapi dengan saus katsu khasjepang, Telur Dadar, Chicken Ball Soup, Fresh Salad, dan Nasi putih',
-        foodPrice: 'Rp 10.000'),
+      name: 'Bento Katsu',
+      image: 'assets/images/Bento Katsu.jpg',
+      desc:
+          'Paket Bento Lengkap berisi Chicken Katsu yang gurih dilengkapi dengan saus katsu khasjepang, Telur Dadar, Chicken Ball Soup, Fresh Salad, dan Nasi putih',
+      foodPrice: 'Rp 10.000',
+      jenis: "Popular",
+    ),
     MenuModel(
-        name: 'Ayam Saus Mentega',
-        image: 'assets/images/Ayam Saus Mentega.jpg',
-        desc:
-            'Dari banyaknya olahan ayam, salah satu menu olahan ayam yang lezat, gurih, dan tidak pedasadalah ayam goreng mentega. Karena rasanya yang manis gurih, olahan ayamyang satu ini juga cocok untuk dikonsumsi anak-anak.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Ayam Saus Mentega',
+      image: 'assets/images/Ayam Saus Mentega.jpg',
+      desc:
+          'Dari banyaknya olahan ayam, salah satu menu olahan ayam yang lezat, gurih, dan tidak pedasadalah ayam goreng mentega. Karena rasanya yang manis gurih, olahan ayamyang satu ini juga cocok untuk dikonsumsi anak-anak.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Popular",
+    ),
     MenuModel(
-        name: 'Nasi Cumi Cabe Hijau',
-        image: 'assets/images/Nasi Cumi Cabe Hijau.jpg',
-        desc:
-            'Ada banyak sekali olahan cumi yang sangat lezat dan mudah dibuat. Salah satu olahan cumienak yang cukup sederhana dibuat yaitu cumi cabe ijo. Cumi cabe ijo merupakanmasakan tumis cumi biasa dengan banyak irisan cabai hijau. Tekstur cuminya yangkenyal dan bumbu cabe ijonya yang pedas, membuat siapa sajayang memakannya pasti akan ketagihan.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Nasi Cumi Cabe Hijau',
+      image: 'assets/images/Nasi Cumi Cabe Hijau.jpg',
+      desc:
+          'Ada banyak sekali olahan cumi yang sangat lezat dan mudah dibuat. Salah satu olahan cumienak yang cukup sederhana dibuat yaitu cumi cabe ijo. Cumi cabe ijo merupakanmasakan tumis cumi biasa dengan banyak irisan cabai hijau. Tekstur cuminya yangkenyal dan bumbu cabe ijonya yang pedas, membuat siapa sajayang memakannya pasti akan ketagihan.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Popular",
+    ),
     MenuModel(
-        name: 'Nasi Bakar Ayam',
-        image: 'assets/images/Nasi Bakar Ayam.jpg',
-        desc:
-            'Nasi bakar merupakan nasi uduk yang diberi isian lalu dibungkus daun pisang dan dibakar.Rasanya yang khas dan wangi daun kemanginya membuat makanan yang satu ini begitumenggugah selera.',
-        foodPrice: 'Rp 10.000'),
+      name: 'Nasi Bakar Ayam',
+      image: 'assets/images/Nasi Bakar Ayam.jpg',
+      desc:
+          'Nasi bakar merupakan nasi uduk yang diberi isian lalu dibungkus daun pisang dan dibakar.Rasanya yang khas dan wangi daun kemanginya membuat makanan yang satu ini begitumenggugah selera.',
+      foodPrice: 'Rp 10.000',
+      jenis: "Popular",
+    ),
   ];
 }
 

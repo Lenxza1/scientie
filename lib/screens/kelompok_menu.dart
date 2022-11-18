@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scientie/model/list_menu.dart';
 import 'package:scientie/widgets/menu_holder.dart';
+import 'package:scientie/widgets/menu_info.dart';
 
 class MenuKelompokPage extends StatefulWidget {
   const MenuKelompokPage({super.key});
@@ -26,11 +27,13 @@ class _MenuKelompokPageState extends State<MenuKelompokPage> {
                   crossAxisSpacing: 8,
                   crossAxisCount: 1),
               itemBuilder: (context, index) => DaftarMenuHolder(
-                  kel: MenuKelModel.menuKelList[index].kel,
-                  foodName1: MenuKelModel.menuKelList[index].name1,
-                  imgPath1: MenuKelModel.menuKelList[index].image1,
-                  foodName2: MenuKelModel.menuKelList[index].name2,
-                  imgPath2: MenuKelModel.menuKelList[index].image2),
+                kel: MenuKelModel.menuKelList[index].kel,
+                foodName1: MenuKelModel.menuKelList[index].name1,
+                imgPath1: MenuKelModel.menuKelList[index].image1,
+                foodName2: MenuKelModel.menuKelList[index].name2,
+                imgPath2: MenuKelModel.menuKelList[index].image2,
+                index: index,
+              ),
             ),
           ),
         ),

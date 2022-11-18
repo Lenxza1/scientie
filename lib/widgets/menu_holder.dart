@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scientie/model/list_menu.dart';
 import 'package:scientie/style/style.dart';
+import 'package:scientie/widgets/menu_info.dart';
 
 class MenuHolder extends StatefulWidget {
   final String imgPath;
@@ -144,15 +146,18 @@ class DaftarMenuHolder extends StatefulWidget {
   final String imgPath1;
   final String foodName2;
   final String imgPath2;
+  int index;
   var onTap;
-  DaftarMenuHolder(
-      {super.key,
-      required this.kel,
-      required this.foodName1,
-      required this.imgPath1,
-      required this.foodName2,
-      required this.imgPath2,
-      this.onTap});
+  DaftarMenuHolder({
+    super.key,
+    required this.kel,
+    required this.foodName1,
+    required this.imgPath1,
+    required this.foodName2,
+    required this.imgPath2,
+    required this.index,
+    this.onTap,
+  });
 
   @override
   State<DaftarMenuHolder> createState() => _DaftarMenuHolderState();
@@ -161,28 +166,39 @@ class DaftarMenuHolder extends StatefulWidget {
 class _DaftarMenuHolderState extends State<DaftarMenuHolder> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: widget.onTap,
-      child: SizedBox(
-        height: 100,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              widget.kel,
-              style: GoogleFonts.arsenal(
-                  textStyle: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              )),
-            ),
-            const SizedBox(height: 8),
-            SizedBox(
-              height: 150,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
+    return SizedBox(
+      height: 100,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            widget.kel,
+            style: GoogleFonts.arsenal(
+                textStyle: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            )),
+          ),
+          const SizedBox(height: 8),
+          SizedBox(
+            height: 150,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                InkWell(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MenuInfo(
+                              title:
+                                  MenuModel.menuListBetawi[widget.index].name,
+                              imageAssetsPath:
+                                  MenuModel.menuListBetawi[widget.index].image,
+                              foodDesc:
+                                  MenuModel.menuListBetawi[widget.index].desc,
+                              context: context,
+                              index: widget.index))),
+                  child: Column(
                     children: [
                       Container(
                         width: 150,
@@ -224,18 +240,35 @@ class _DaftarMenuHolderState extends State<DaftarMenuHolder> {
                               ),
                             ),
                             const SizedBox(height: 1),
-                            Text(widget.foodName1,
-                                style: GoogleFonts.arsenal(
-                                    textStyle: const TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.white))),
+                            Text(
+                              widget.foodName1,
+                              style: GoogleFonts.arsenal(
+                                textStyle: const TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ],
                   ),
-                  Column(
+                ),
+                InkWell(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MenuInfo(
+                              title:
+                                  MenuModel.menuListPopular[widget.index].name,
+                              imageAssetsPath:
+                                  MenuModel.menuListPopular[widget.index].image,
+                              foodDesc:
+                                  MenuModel.menuListPopular[widget.index].desc,
+                              context: context,
+                              index: widget.index))),
+                  child: Column(
                     children: [
                       Container(
                         width: 150,
@@ -277,22 +310,25 @@ class _DaftarMenuHolderState extends State<DaftarMenuHolder> {
                               ),
                             ),
                             const SizedBox(height: 1),
-                            Text(widget.foodName2,
-                                style: GoogleFonts.arsenal(
-                                    textStyle: const TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.white))),
+                            Text(
+                              widget.foodName2,
+                              style: GoogleFonts.arsenal(
+                                textStyle: const TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
