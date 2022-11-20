@@ -48,13 +48,13 @@ void main() {
               return const BottomNav();
             },
           );
-          case "/BetawiFood":
+        case "/BetawiFood":
           return MaterialPageRoute(
             builder: (context) {
               return const MenuBetawi();
             },
           );
-          case "/PopularFood":
+        case "/PopularFood":
           return MaterialPageRoute(
             builder: (context) {
               return const MenuPopular();
@@ -63,7 +63,7 @@ void main() {
         default:
           return MaterialPageRoute(
             builder: (context) {
-              return SplashScreen();
+              return const SplashScreen();
             },
           );
       }

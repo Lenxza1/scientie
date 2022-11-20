@@ -124,6 +124,7 @@ class _HomePageState extends State<HomePage> {
                           imageAssetsPath:
                               MenuModel.menuListPopular[index].image,
                           foodDesc: MenuModel.menuListPopular[index].desc,
+                          noWa: MenuKelModel.menuKelList[index].noKel,
                           context: context,
                           index: index,
                         ),

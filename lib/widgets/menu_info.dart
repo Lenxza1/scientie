@@ -10,6 +10,7 @@ class MenuInfo extends StatelessWidget {
   final BuildContext context;
   final int index;
   final String foodPrice;
+  final String noWa;
   const MenuInfo(
       {super.key,
       required this.title,
@@ -17,13 +18,14 @@ class MenuInfo extends StatelessWidget {
       required this.foodDesc,
       required this.context,
       required this.index,
+      required this.noWa,
       this.foodPrice = 'Rp 2.000,00'});
 
   whatsappButton() async {
     await launchUrl(Uri(
         scheme: 'https',
         host: 'wa.me',
-        path: '6287875908732?text=Saya%20Pesan%20$title'));
+        path: '$noWa?text=Saya%20Pesan%20$title'));
   }
 
   @override
@@ -84,7 +86,7 @@ class MenuInfo extends StatelessWidget {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
           var whatsapplink = Uri.parse(
-              'whatsapp://send?phone=6287875908732&text=Saya%20Pesan%20$title');
+              'whatsapp://send?phone=$noWa&text=Hallo%20Saya%20Salah%20Satu%20Pengguna%20Aplikasi%20Saya%20Pesan%20$title');
           if (await canLaunchUrl(whatsapplink)) {
             await launchUrl(whatsapplink);
           } else {

@@ -108,26 +108,29 @@ class _KategoriMenuHolderState extends State<KategoriMenuHolder> {
                       style: GoogleFonts.arsenal(
                           textStyle: const TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold)),
                     ),
                     Text(
                       widget.foodPrice,
+                      overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.arsenal(
                           textStyle: const TextStyle(
                               color: Colors.white,
                               fontSize: 14,
                               fontWeight: FontWeight.normal)),
                     ),
-                    Text(
-                      widget.desc,
-                      maxLines: 3,
-                      overflow: TextOverflow.clip,
-                      style: GoogleFonts.arsenal(
-                          textStyle: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.normal)),
+                    Flexible(
+                      child: Text(
+                        widget.desc,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.arsenal(
+                            textStyle: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal)),
+                      ),
                     )
                   ],
                 ),
@@ -196,6 +199,8 @@ class _DaftarMenuHolderState extends State<DaftarMenuHolder> {
                                   MenuModel.menuListBetawi[widget.index].image,
                               foodDesc:
                                   MenuModel.menuListBetawi[widget.index].desc,
+                              noWa:
+                                  MenuKelModel.menuKelList[widget.index].noKel,
                               context: context,
                               index: widget.index))),
                   child: Column(
@@ -266,6 +271,8 @@ class _DaftarMenuHolderState extends State<DaftarMenuHolder> {
                                   MenuModel.menuListPopular[widget.index].image,
                               foodDesc:
                                   MenuModel.menuListPopular[widget.index].desc,
+                              noWa:
+                                  MenuKelModel.menuKelList[widget.index].noKel,
                               context: context,
                               index: widget.index))),
                   child: Column(
