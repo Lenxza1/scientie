@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         const Duration(seconds: 5),
         () => Navigator.pushNamedAndRemoveUntil(
-            context, '/Nav', (route) => false));
+            context, '/Login', (route) => false));
   }
 
   @override

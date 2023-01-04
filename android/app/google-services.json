@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "777953802863",
+    "project_id": "scientie-e155d",
+    "storage_bucket": "scientie-e155d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777953802863:android:4656bdfe96a9a27d382b9a",
+        "android_client_info": {
+          "package_name": "com.example.scientie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777953802863-9pbppd01ip22rtvh8eghn7t7j6qbsnnk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.scientie",
+            "certificate_hash": "761db8ccfdf29fec6d1559b6adafffcab4d9c64e"
+          }
+        },
+        {
+          "client_id": "777953802863-8jeu0girv0564jto5h3ik70fhct0ohnp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIdS5kZusmOO5HV5fE4EH0JG1ClINPiEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777953802863-8jeu0girv0564jto5h3ik70fhct0ohnp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

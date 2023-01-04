@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scientie/screens/account_page.dart';
 import 'package:scientie/screens/home_page.dart';
 import 'package:scientie/screens/kelompok_menu.dart';
 
@@ -14,6 +15,7 @@ class _BottomNavState extends State<BottomNav> {
   final pages = [
     const HomePage(),
     const MenuKelompokPage(),
+    const AccountPage()
   ];
 
   @override
@@ -38,6 +40,8 @@ class _BottomNavState extends State<BottomNav> {
               BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
               BottomNavigationBarItem(
                   icon: Icon(Icons.group), label: "Kelompok"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.account_circle_sharp), label: "Account"),
             ]));
   }
 }

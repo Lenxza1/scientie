@@ -1,9 +1,27 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scientie/style/style.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+
+  Future signUp() async {
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: email.text.trim(), password: password.text.trim());
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +99,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
               ),
-              // Username
+              // Email
               const SizedBox(height: 10),
               SizedBox(
                 width: MediaQuery.of(context).size.width - 32,
@@ -103,7 +121,7 @@ class RegisterPage extends StatelessWidget {
                       ),
                     ),
                     contentPadding: const EdgeInsets.all(12),
-                    hintText: 'Username',
+                    hintText: 'Email',
                     hintStyle: GoogleFonts.arsenal(
                       textStyle: const TextStyle(
                         fontSize: 16,
@@ -170,79 +188,11 @@ class RegisterPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: signUp,
                   child: const Text('Sign Up'),
                 ),
               ),
               const SizedBox(height: 15),
-              // Divider
-              Row(
-                children: [
-                  const Expanded(
-                    child: Divider(),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Atau Sign up Dengan',
-                    style: GoogleFonts.arsenal(
-                      textStyle: const TextStyle(
-                        fontSize: 15,
-                        color: Color(0xFF888585),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  const Expanded(child: Divider())
-                ],
-              ),
-              const SizedBox(height: 12),
-              // Google Login Button
-              SizedBox(
-                width: MediaQuery.of(context).size.width - 80,
-                child: OutlinedButton.icon(
-                  style: ButtonStyle(
-                      shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  )),
-                  onPressed: () {},
-                  icon: Image.asset('assets/icons/Google.png'),
-                  label: Text(
-                    'Sign up dengan Google',
-                    style: GoogleFonts.arsenal(
-                      textStyle:
-                          const TextStyle(fontSize: 16, color: Colors.black),
-                    ),
-                  ),
-                ),
-              ),
-              // Facebook Login Button
-              SizedBox(
-                width: MediaQuery.of(context).size.width - 80,
-                child: OutlinedButton.icon(
-                  style: ButtonStyle(
-                      shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  )),
-                  onPressed: () {},
-                  icon: Image.asset('assets/icons/Facebook.png'),
-                  label: Text(
-                    'Sign up dengan Facebook',
-                    style: GoogleFonts.arsenal(
-                      textStyle:
-                          const TextStyle(fontSize: 16, color: Colors.black),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 14),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scientie/model/list_menu.dart';
 import 'package:scientie/widgets/menu_holder.dart';
-import 'package:scientie/widgets/menu_info.dart';
 
 class MenuKelompokPage extends StatefulWidget {
   const MenuKelompokPage({super.key});
